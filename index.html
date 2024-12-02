@@ -3,551 +3,123 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Mini Assignment 2</title>
+<title>Digital Past Final Project</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Mini Assignment 2.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Mini Assignment 2" startnode="1" creator="Twine" creator-version="2.9.2" format="Harlowe" format-version="3.3.9" ifid="07F99E49-F8D9-45B7-B38C-AF38E8D9056A" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Representative character" tags="" position="1000,575" size="100,100">I will be doing a representative character story, involving the Mary Rose ship.
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Digital Past Final Project.</tw-noscript></noscript></tw-story>
+<tw-storydata name="Digital Past Final Project" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="651A2E8C-80FC-4B46-AAC5-7DDFF7C18F3E" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Exploring the history of the Mary Rose" tags="" position="700,300" size="100,100">Click one of the following to learn more about the Mary Rose!
+[[Construction and launch]]
+[[Entry in the Battle of the Solent]]
+[[The Sinking of the Mary Rose]]
+[[Rediscovery in 1982]]
+
+
+
+
+[[Resources]]</tw-passagedata><tw-passagedata pid="2" name="Construction and launch" tags="" position="850,50" size="100,100">&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Basire_Embarkation_of_Henry_VIII.jpg#/media/File:Basire_Embarkation_of_Henry_VIII.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/e/ec/Basire_Embarkation_of_Henry_VIII.jpg&quot; alt=&quot;A small fleet of large, highly decorated carracks are riding on a wavy sea. In the foreground are two low, fortified towers bristling with cannons and armed soldiers and an armed retinue walking between them.&quot; height=&quot;311&quot; width=&quot;640&quot;&gt;&lt;/a&gt;&lt;br&gt;By Jakob Kate 
+
+[[Frame construction]]
+[[Material selection]]
+[[Iron fastening]]
+[[Gunports]]
+[[Carvel planking]]
+[[Waterproofing]]
+[[Deck construction]]
+[[Sailing and mast arrangement]]
+[[Hull shape]]
+[[Design features]]
+[[Launch site]]
+[[Preparations of the launch]]
+[[Launch ceremony]]</tw-passagedata><tw-passagedata pid="3" name="Entry in the Battle of the Solent" tags="" position="1075,525" size="100,100">&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Cowdray_engraving-full-lowres.jpg#/media/File:Cowdray_engraving-full-lowres.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/6/63/Cowdray_engraving-full-lowres.jpg&quot; alt=&quot;Cowdray engraving-full-lowres.jpg&quot; height=&quot;250&quot; width=&quot;750&quot;&gt;&lt;/a&gt;&lt;br&gt;By James Basire&lt;a 
+&lt;p&gt;&lt;a 
+
+[[Part of the english fleet]]
+[[Commander of the ship]]
+[[Battle formation]]
+[[French invasion]]
+[[Weaponry]]
+[[Tactical role]]
+[[Sinking]]
+[[Outcome of the battle]]
+[[Theories behind sinking]]
+[[Legacy]]
+[[Rediscovery]]
+[[Preservation]]</tw-passagedata><tw-passagedata pid="4" name="The Sinking of the Mary Rose" tags="" position="225,225" size="100,100">[[ Unclear cause of sinking]]
+[[Weather conditions]]
+[[Overloaded]]
+[[Capsizing]]
+[[Lives lost]]
+[[Opened gunports]]
+[[Flooding of lower decks]]
+[[Reaction of the English]]
+[[Firsthand accounts]]
+</tw-passagedata><tw-passagedata pid="5" name="Rediscovery in 1982" tags="" position="500,575" size="100,100">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/5XhbXKE6aTc?si=ymdlBKcs5DCFHH9o&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+[[1st salvage attempt]]
+[[2nd salvage attempt]]
+[[Initial discovery]]
+[[Location in Solent]]
+[[Identification]]
+[[Marine archaeology]]
+[[Alexander McKee’s role]]
+[[Challenges in excavation]]
+[[Surfacing the ship]]
+[[Conservation]]
+[[Artifacts]]
+[[Mary rose trust]]
+[[Exhibition]]
+
+
+</tw-passagedata><tw-passagedata pid="6" name="Frame construction" tags="" position="975,0" size="100,100">The construction of the Mary Rose began with a wooden Oak frame, a popular material during the Tudor period. The framing further consisted of keel, stem, and ribs. The keel formed the backbone of the ship, while the ribs (also known as frames), were spaced evenly and connected by a metal spine to give the ship its shape and structure. The frames were crafted in order to withstand high sea pressures, providing strength and stability to the vessel. (The Mary Rose Trust n.d.). 
+</tw-passagedata><tw-passagedata pid="7" name="Material selection" tags="" position="1125,0" size="100,100">The primary choice of material was Oak, mainly for its durability and strength. Oak was ideal for its resistance to rot and damage from the harsh and salty sea. Other materials, like pine, were used for the decks and smaller structures like the masts supports. The variety of materials ensured the ship was strong enough to withstand naval battles and flexible enough to endure rough seas. High quality wood was of great value, with the best timber being used for the most crucial parts of the ship. 3 - Iron fastening
+Iron fastening was utilized extensively in the construction of the Mary Rose for fastening various parts of the ship together. Iron nails, bolts, and rivets were used to join the plank and frames. Iron was chosen due to its strength and permanence, rendering it ideal for holding the ship together under the stress of combat and rough sailing conditions. The use of iron was a fairly new innovation at the time, marking a step forward in naval engineering.
+</tw-passagedata><tw-passagedata pid="8" name="Iron fastening" tags="" position="700,25" size="100,100">Iron fastening was utilized extensively in the construction of the Mary Rose for fastening various parts of the ship together. Iron nails, bolts, and rivets were used to join the plank and frames. Iron was chosen due to its strength and permanence, rendering it ideal for holding the ship together under the stress of combat and rough sailing conditions. The use of iron was a fairly new innovation at the time, marking a step forward in naval engineering.
+</tw-passagedata><tw-passagedata pid="9" name="Gunports" tags="" position="1275,0" size="100,100">Fun Fact! The Mary Rose was one of the first ships to carry a gunport— and opening in the side of the ship through which cannons were fired. Gunports were crucial for the effectiveness of naval warfare at the time, allowing the Mary Rose to engage enemy ships with artillery. 
+</tw-passagedata><tw-passagedata pid="10" name="Carvel planking" tags="" position="1000,125" size="100,100">The ship was constructed using carvel planking. This method involves attaching the planks of the hull edge-to-edge, with seams being filled in a way that creates a smooth, continuous surface. This is in contrast to clinker planking, where the edges of the planks overlap. This form of planking provided a more efficient way to build a robust and watertight hull. Furthermore, it made ship maintenance an easier task.
+</tw-passagedata><tw-passagedata pid="11" name="Waterproofing" tags="" position="1000,250" size="100,100">Waterproofing a boat is essential for protecting it from water damage. Different parts of a boat, including the deck, hull, and cabin, require specific treatments. The hull is often coated with waterproof paint or sealant to prevent water ingress, while decks may be treated with slip-resistant, waterproof materials to avoid slips and reduce water damage (Poss, 2023). Silicone-based sealants, varnishes, or epoxy resins are used on joints and seams to prevent leaks. Regular inspection and maintenance of these treatments are necessary to ensure the boat remains dry and structurally sound throughout its life.
+</tw-passagedata><tw-passagedata pid="12" name="Deck construction" tags="" position="1125,250" size="100,100">Deck construction is critical for both the aesthetic and functional performance of a boat. It is built to withstand exposure to water, sunlight, and the stresses of sailing. Marine-grade plywood or fiberglass is commonly used, ensuring durability and resistance to rot and water damage. The deck design includes features like non-slip surfaces, drains, and strategically placed cleats for securing lines (Rajan, Rainosalo, 2023). Attention to detail in deck construction ensures not only safety and functionality but also comfort for passengers and crew. Proper sealing and finishing are essential to maintain the deck&#39;s longevity.
+</tw-passagedata><tw-passagedata pid="13" name="Sailing and mast arrangement" tags="" position="1250,250" size="100,100">&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:MaryRose-rigging_blocks2.JPG#/media/File:MaryRose-rigging_blocks2.JPG&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/3b/MaryRose-rigging_blocks2.JPG&quot; alt=&quot;Five well-preserved rigging blocks on a white background&quot; height=&quot;480&quot; width=&quot;588&quot;&gt;&lt;/a&gt;&lt;br&gt;By the Mary Rose Trust &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/3.0&quot; title=&quot;Creative Commons Attribution-Share Alike 3.0&quot;&lt;a href=&quot;https://commons.wikimedia.org/w/index.php?curid=8883200&quot;
+
+The Mary Rose had four masts, with a high forecastle (front of the ship) and a low waist (middle of the ship) to pull the ship in order to engage in combat. (Google n.d.) The masts were raised and lowered using rigging blocks, seen here, which are tools used to lift and lower heavy objects. (Wikimedia Foundation 2024)</tw-passagedata><tw-passagedata pid="14" name="Hull shape" tags="" position="575,25" size="100,100">During the Tudor period, the archetypical hull of a ship was comprehensive and round and perfect for transporting many workers, animals, or abundant merchandise. Or there was a keel which provided plenty of buoyancy in the water. Other things, implemented on ships like Mary Rose, incorporated a clinker-built design, where several wooden boards overlapped with each other for better ship solidity and improved water tightness (Tacchella,2023). The curved hull at the front and rear reduced water resistance, while the high and flat centerline provided the buoyancy necessary for crossing storms. This design symbolized the two uses common with war and trading missions at that time and offered speed and strength.</tw-passagedata><tw-passagedata pid="15" name="Design features" tags="" position="1250,125" size="100,100">The shipbuilding Tudor had high castles where the bow area was referred to as the &#39;bow castle&#39; and the stern area was called the &#39;stern castle.&#39; Today, ships provide an advantage on the high seas to those engaged in a naval battle, providing some form of a platform for deploying bowmen and guns or cannons. Ornamental carvings or gilded decorations were characteristic of many ships, indicating owners&#39; proportionate power and affluence. Sailing improved through such features as more complex masting and sails that made the vessels easy to maneuver and faster (Tacchella,2023).
+. Further, the usage of gun ports changed the nature of ship combat by offering the possibility of placing cannons on the sides of the ship – Tudor ships became valuable naval forces.
+</tw-passagedata><tw-passagedata pid="16" name="Launch site" tags="" position="700,150" size="100,100">The place for lunch by Tudor shipbuilders and sailors was frequently a mess and was located near the dockyard. Employees would be provided with food facilities where they would squat under leafy tents or wooden decks to consume meals prepared by these facilities. The food usually consisted of bread, cheese, salted meat, and ale because these foods did not spoil easily and could be moved around easily (Tacchella,2023). They also provided a platform for friendly chat where workers shared experiences or others working on the same project could share ideas. This made it efficient because it reduced the time the company had to spend away from the shipyard while constructing the ships.
+</tw-passagedata><tw-passagedata pid="17" name="Preparations of the launch" tags="" position="1125,125" size="100,100">These were simple food preparation methods during the feudal or Tudor periods. The food was prepared over an open flame or in wooden-tray clay ovens at the dockyards. Snacks were washed in water in case they were salty or smoked, while other meals were fresh bread or bought from bakeries near homes. Eat lunch and drink ale, for it is safer than water in that period, given occupational health. Herbs and spices were rarely used, only used to season the food. It was time-consuming to explain the high use of manual approaches instead of modern-day automated methods (Hodgkinson, 2024).</tw-passagedata><tw-passagedata pid="18" name="Launch ceremony" tags="" position="875,200" size="100,100">The launch of Tudor ships was a grand ceremony involving blessings, feasting, and festivities. A priest would perform a religious service to bless the vessel and its crew, seeking divine protection for the voyages ahead. Nobles and shipowners often attended, symbolizing the importance of the event. A decorated barrel of ale or wine was broken against the ship&#39;s hull, a precursor to modern champagne bottle ceremonies. The event underscored the community&#39;s pride and the ship&#39;s role in advancing Tudor maritime power (Hodgkinson, 2024)
+</tw-passagedata><tw-passagedata pid="19" name="Part of the english fleet" tags="" position="1000,375" size="100,100">The Mary Rose was launched in 1511, commissioned as a part of King Henry VIII’s naval reforms. She was of the first ships designed with gunports, allowing heavy cannon fire from the sides, which revolutionized naval combat. Her career spanned 34 years, serving primarily against France and Scotland. (Mary Rose Trust, n.d.; British Heritage Travel, 2023)</tw-passagedata><tw-passagedata pid="20" name="Commander of the ship" tags="" position="1125,375" size="100,100">The Mary Rose had a series of notable commanders throughout her voyaging. During her final mission in 1545, the Mary Rose was commanded by Sir George Carew, a distinguished and highly experienced naval officer. Carew reportedly expressed concern about the ship’s performance and preparedness of the crew. He noted how the sailors and soldiers were inexperienced, as they were hastily assembled to respond to the French invasion threat. However, as a trusted figure in Henry VIII’s court, he was tasked with commanding the flagship during one of England’s most significant naval confrontations. (Mary Rose Trust, n.d.; British Heritage Travel, 2023)</tw-passagedata><tw-passagedata pid="21" name="Battle formation" tags="" position="875,325" size="100,100">The Mary Rose was a key player in England’s Tudor naval strategy, which emphasized powerful broadside attacks. She often sailed at the head of her formation, signaling maneuvers to other vessels. Her firepower and size made her an intimidating presence, designed to disrupt enemy lines and protect smaller, more vulnerable ships. The English navy relied on close coordination between vessels, with the Mary Rose leading the charge (Mary Rose Trust, n.d.).
+</tw-passagedata><tw-passagedata pid="22" name="French invasion" tags="" position="1225,525" size="100,100">The French invasion fleet of 1545 posed a dire threat to England, amassing over 200 ships, including galleys and troop carriers. Henry VIII’s navy, though outnumbered, was better equipped for sustained combat. The Mary Rose was dispatched to the Solent, the narrow waterway near Portsmouth, to engage the French. Her mission was to prevent the enemy from landing troops on English soil (British Heritage Travel, 2023).
+</tw-passagedata><tw-passagedata pid="23" name="Weaponry" tags="" position="1200,650" size="100,100">The Mary Rose was heavily armed for her time. She carried 91 guns, including bronze cannon, and breech-loading guns. In addition to her artillery, she was equipped with longbows, pikes, and crossbows. By the mid-16th century, Tudor England&#39;s weaponry was a mix of traditional arms and emerging gunpowder-based technology. Crossbows, although less common than the longbow, were still in use for both naval and land combat. Handguns, including small, portable hand cannons, had become more widespread, though they were slow to reload and not very accurate. On board ships like the Mary Rose, cannons were a major advancement. These large, gunpowder-powered weapons, such as bombards, culverins, and sakers, could launch heavy projectiles over long distances and played a critical role in naval battles like the Battle of the Solent. In addition to firearms, pikes and spears were standard for close combat, with pikes being used for defense and offense, while shorter spears were ideal for boarding actions. Swords and daggers were common sidearms for soldiers and officers, with rapiers being popular for officers and broadswords for heavier combat. Though muskets and rifles had not fully developed by the time the Mary Rose sank in 1545, early forms of firearms were already reshaping military arsenals (Mary Rose Trust, n.d.).</tw-passagedata><tw-passagedata pid="24" name="Tactical role" tags="" position="1250,400" size="100,100">As the flagship, the Mary Rose had dual responsibilities: to spearhead offensive actions and to provide strategic oversight for the fleet. Her position at the vanguard made her a target for enemy fire but also allowed her to control the flow of battle. Her mobility and firepower were intended to outmatch slower, less maneuverable French ships (British Heritage Travel, 2023).</tw-passagedata><tw-passagedata pid="25" name="Sinking" tags="" position="925,550" size="100,100">The Mary Rose sank during the Battle of the Solent on July 19, 1545, in full view of Henry VIII, who was watching from Southsea Castle. Accounts from survivors suggest that she heeled over sharply after making a tight turn, possibly due to water entering through her open gunports. This rapid flooding likely destabilized the ship, causing her to capsize. Only 35 men out of over 400 survived the disaster. (Mary Rose Trust, n.d.).
+</tw-passagedata><tw-passagedata pid="26" name="Outcome of the battle" tags="" position="1075,650" size="100,100">Despite the tragic sinking of the Mary Rose during the Battle of the Solent on July 19, 1545, England ultimately emerged victorious. The French fleet, led by King Francis I, had launched an invasion to land troops on the Isle of Wight, but after the Mary Rose sank, the remaining English ships, including those armed with powerful cannons and longbowmen, continued to hold their ground. The loss of such a valuable warship was a devastating blow, but it did not stop the English from successfully defending their shores. The French were unable to land their forces, and after facing strong resistance, they retreated, abandoning their invasion. The battle ended in an English victory, and the French invasion was effectively repelled. (British Heritage Travel, 2023; Mary Rose Trust, n.d.)</tw-passagedata><tw-passagedata pid="27" name="Weather conditions" tags="" position="175,25" size="100,100">The sinking of the Mary Rose was stormy and rough, with strong winds and choppy seas. These conditions likely made the ship more vulnerable as it tried to maneuver during battle. The ship was turning to face the French fleet when a gust of wind may have caught its sails, pushing it over too far and causing it to take on water through its open gunports. The combination of the heavy cannons, the overloaded ship, and the bad weather probably made the Mary Rose unstable, which led to it capsizing quickly. While the exact details of the weather are unclear, it’s clear that the stormy conditions played a major part in the ship’s tragic loss.</tw-passagedata><tw-passagedata pid="28" name="Overloaded" tags="" position="275,25" size="100,100">Mary Rose was overloaded at the time of its sinking. The ship had recently been refitted and was carrying a significant amount of heavy artillery, including cannons and ammunition, which may have made it unstable. The Mary Rose was designed to carry a large number of guns and a substantial crew, but there is evidence that it was carrying more weight than it could handle, especially during the battle. This overloading likely contributed to the ship’s vulnerability.</tw-passagedata><tw-passagedata pid="29" name="Capsizing" tags="" position="375,25" size="100,100">The Mary Rose sank on July 19, 1545, during the Battle of the Solent, in a sudden and tragic event. The ship, which was heavily armed with cannons and carried a large crew, capsized quickly while trying to turn during the battle. Several factors likely caused the sinking, including the ship being overloaded with heavy cannons and supplies, poor maneuvering when turning to face the French fleet, and open gunports that allowed water to flood in as the ship tilted. Strong winds may have also made things worse. Within minutes, the Mary Rose sank, and around 400 crew members lost their lives, with only 35 to 40 survivors. The wreck was discovered in 1971 and raised in 1982, giving historians a better understanding of what happened and offering a glimpse into Tudor naval life.
+</tw-passagedata><tw-passagedata pid="30" name="Lives lost" tags="" position="75,25" size="100,100">The sinking of the Mary Rose resulted in the loss of around 400 lives, as the ship was carrying a large crew at the time. Estimates suggest that approximately 35 to 40 men survived the disaster, most of whom were on the upper decks or managed to escape the sinking ship, often by clinging to the rigging or being rescued by nearby vessels. The majority of the crew members, including sailors, archers, and soldiers, tragically perished when the ship capsized. The exact number of casualties varies in historical accounts, but the loss of life was significant.
+</tw-passagedata><tw-passagedata pid="31" name="Opened gunports" tags="" position="225,475" size="100,100">The only eyewitness to the sinking of the Mary Rose, who was a Flemish sailor, claimed the ship had fired all of the guns on the starboard side of the ship and was turning when a strong gust of wind pushed the gunports open and dipped below the waterline, causing water to infiltrate the ship, sinking it. (Why did the mary rose sink?. The Mary Rose. 2024)</tw-passagedata><tw-passagedata pid="32" name="Flooding of lower decks" tags="" position="375,150" size="100,100">The flooding of the lower decks was a crucial factor in the sinking of the Mary Rose. The ship’s open gunports, the large openings on the sides of the ship through which cannons were fired—are believed to have allowed water to flood in when the ship healed over (tilted) during the battle.
+As the Mary Rose attempted to turn sharply to engage the French fleet, it became unstable. The ship&#39;s overloaded condition (with heavy cannons, ammunition, and crew) made it more prone to leaning to one side. When the ship tilted, water likely rushed into the lower decks through the open gunports. This caused the ship to become flooded quickly, which led to its capsizing.
+</tw-passagedata><tw-passagedata pid="33" name="Reaction of the English" tags="" position="375,300" size="100,100">The sinking of the Mary Rose was met with shock and grief in England, as it was a symbol of the country’s naval power. The loss of around 400 men was devastating, and many blamed poor tactics and overloading for the tragedy. Despite the blow, King Henry VIII and the English leadership quickly shifted focus to winning the Battle of the Solent, which they eventually did, repelling the French invasion. The sinking also prompted changes in English naval strategy and ship design to prevent similar disasters in the future.</tw-passagedata><tw-passagedata pid="34" name="Firsthand accounts" tags="" position="75,300" size="100,100"></tw-passagedata><tw-passagedata pid="35" name=" Unclear cause of sinking" tags="" position="75,150" size="100,100">The sinking remains somewhat unclear, despite numerous theories and research into the event. While historians and experts have pieced together several potential factors, no single explanation fully accounts for why the ship sank so suddenly and tragically. Could have been because of the weightload or even structural design. 
+</tw-passagedata><tw-passagedata pid="36" name="Initial discovery" tags="" position="675,475" size="100,100">​​Discovery of the Mary Rose wreck occurred in 1971 when a group of divers, led by Alexander McKee, located the remains of the ship in the Solent, off the coast of Portsmouth. The site had long been rumored to hold the wreck of the famous Tudor warship, but its exact location had remained a mystery for centuries. The discovery was made at a depth of about 12 meters (40 feet), near the spot where the Mary Rose had sunk in 1545 during the Battle of the Solent.</tw-passagedata><tw-passagedata pid="37" name="Location in Solent" tags="" position="675,600" size="100,100">A strait of water between the Isle of Wight and the southern coast of England. More specifically, it went down near the south coast of England, just off the coast of the city of Portsmouth, while engaged in the Battle of the Solent in 1545. </tw-passagedata><tw-passagedata pid="38" name="Identification" tags="" position="350,425" size="100,100"></tw-passagedata><tw-passagedata pid="39" name="Marine archaeology" tags="" position="350,550" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="Alexander McKee’s role" tags="" position="600,700" size="100,100">The search for and discovery of the Mary Rose was initiated by a man by the name of Alexander McKee. In 1965, McKee, in conjunction with the Southsea branch of the British Sub-Aqua Club, began ‘Project Solent Ships’ to investigate shipwrecks in Solent. He, together with archaeologist Margaret Rule, searched in hope to rediscover the Mary Rose. In 1966, a chart was found that displayed the positions of three wrecks, one of which was the Mary Rose. This refined the search area and, together with sonar and sub-bottom profiling, it was rediscovered in 1971. (Raising the Mary Rose. The Mary Rose. 2024)</tw-passagedata><tw-passagedata pid="41" name="Challenges in excavation" tags="" position="475,400" size="100,100"></tw-passagedata><tw-passagedata pid="42" name="Surfacing the ship" tags="" position="475,725" size="100,100"></tw-passagedata><tw-passagedata pid="43" name="Conservation" tags="" position="350,675" size="100,100"></tw-passagedata><tw-passagedata pid="44" name="Artifacts" tags="" position="225,600" size="100,100"></tw-passagedata><tw-passagedata pid="45" name="Mary rose trust" tags="" position="725,725" size="100,100"></tw-passagedata><tw-passagedata pid="46" name="Exhibition" tags="" position="350,825" size="100,100">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/KOEWvkwZfaM?si=-K6DKEA2VVutZTzF&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="47" name="1st salvage attempt" tags="" position="500,850" size="100,100">After the Battle of Solent ended, the English began work on recovering the Mary Rose. Despite being a relatively old ship, it was still valuable. Venetian salvage experts were hired, planning to lower cables under the ship and raise it to the surface. The recovery was delayed and although some parts of the mast were secured, the operation was abandoned and would not be seen again for another 200 years. (Recovery 1545. The Mary Rose 2024)</tw-passagedata><tw-passagedata pid="48" name="2nd salvage attempt" tags="" position="625,850" size="100,100">In June 1836, fishermen reported snagging their nets on “something” on the seafloor. Diver Henry Abbinett investigated the claim, while John Deane and William Edwards used their equipment to work on the Mary Rose and began uncovering artifacts. Public interest grew and it was later confirmed to be the Mary Rose. Many items were recovered but it was seen as more of a financial gain, rather than archaeological, with many objects being sold. The site was then abandoned for demolition. While it was believed Colonel Charles Pasley demolished the site, he never did. (19th century salvage. The Mary Rose. 2024)</tw-passagedata><tw-passagedata pid="49" name="Resources" tags="" position="850,750" size="100,100">British Heritage Travel. (2023). The history and significance of the Mary Rose. Retrieved from https://britishheritagetravel.com
+
+Google. (n.d.). The Mary Rose - Google Arts &amp; Culture. Retrieved from https://artsandculture.google.com/story/the-mary-rose/_AVxVzTj0gBsUg?hl=en
+
+Hodgkinson, G. (2024). A history of ship launches and their ceremonies.
+
+Kerr, J. (2023). Dreamers before the mast: The history of the tall ship Regina Maris.
+Mary Rose Trust. (n.d.). The story of the Mary Rose. Retrieved from https://maryrose.org
+
+Mary Rose Trust. (2024, October 2). Recovery 1545. Retrieved from https://maryrose.org/discover/history/recovery-1545/
+
+Mary Rose Trust. (2024a, October 2). 19th century salvage. Retrieved from https://maryrose.org/discover/history/salvage-1836/
+
+Mary Rose Trust. (2024b, May 24). Raising the Mary Rose. Retrieved from https://maryrose.org/discover/history/recovering-the-mary-rose/#:~:text=The%20search%20for%20and%20discovery,investigate%20wrecks%20in%20the%20Solent
+
+Mary Rose Trust. (2024d, May 24). Why did the Mary Rose sink?. Retrieved from https://maryrose.org/discover/history/why-did-the-mary-rose-sink/
 
+Poss, J. (2023). Design and construction of a fully submerged hydrofoil drone boat (Doctoral dissertation, Massachusetts Institute of Technology).
 
-	In this game, you will be learning about and following the stories of crew members on the &#39;&#39;Mary Rose&#39;&#39; ship! The &#39;&#39;Mary Rose&#39;&#39; was a naval ship, named after Henry VIII&#39;s sister, that was built in 1510 during Henry VIII&#39;s reign as a Tudor king. It was his favorite ship for the thirty four years it was erect, until its sinking in 1545. 
-    
-	The &#39;&#39;Mary Rose&#39;&#39; ship was a large part of the English naval fleet, who had the goal of stopping the French troops from landing on the Isle of Wight, an island in southern England. The French troops were interested in this island because it would have given them control of the surrounding waters.
+Rajan, R., &amp; Rainosalo, E. (2023). Sustainable boat design guide: Materials, manufacturing, end-of-life, and environmental impact.
 
-	On July 19th 1545, the &#39;&#39;Mary Rose&#39;&#39; sank off the coast of the Isle of Wight. Only about thirty were rescued. There are different theories as to why the ship sank but no one knows for sure. The two leading theories was that it was either shot down by the French or capsized due to its holding of hundreds more people than the maximum capacity. Most sources suggest there were anywhere between five hundred and seven hundred people on board. The most accepted conclusion is that the boat was overcrowded.  
-    
-	The &#39;&#39;Mary Rose&#39;&#39; contained many people; including (text-colour:red)[carpenters], (text-colour:yellow)[surgeons], (text-colour:green)[cooks], (text-colour:blue)[pilots], (text-colour:purple)[master gunners], (text-colour:magenta)[royal archers], (text-colour:cyan)+(bg:black)[a dog] and many more people. Choose a member to learn about!
-   
-  [[The carpenter]]
-   [[ The surgeon]]
-   [[The cook]]
-   [[The master gunner]]
-   [[The royal archer]]
-   [[Hatch, the dog]]
-
-&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:AnthonyRoll-2_Mary_Rose.jpg#/media/File:AnthonyRoll-2_Mary_Rose.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/5d/AnthonyRoll-2_Mary_Rose.jpg&quot; alt=&quot;Mary Rose&quot; height=&quot;440&quot; width=&quot;640&quot;&gt;&lt;/a&gt;&lt;br&gt;By Own scan. Photo by Gerry Bye. Original by &lt;a href=&quot;https://en.wikipedia.org/wiki/Anthony_Anthony&quot; class=&quot;extiw&quot; title=&quot;w:Anthony Anthony&quot;&gt;Anthony Anthony&lt;/a&gt;.  &lt;a href=&quot;https://en.wikipedia.org/wiki/Anthony_Roll&quot; class=&quot;extiw&quot; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]]</tw-passagedata><tw-passagedata pid="2" name="sources" tags="" position="650,25" size="100,100">Mary Rose Trust. (2024, September 19). The life of the Mary Rose - The Mary Rose. The Mary Rose. https://maryrose.org/discover/history/life-of-the-mary-rose/
-
-Elliott, P. (n.d.). Invading the Isle of Wight. http://graceelliot-author.blogspot.com/2013/09/invading-isle-of-wight.html#:~:text=In%20medieval%20times%2C%20the%20French,the%20south%20coast%20of%20England.
-
-Mary Rose. (n.d.). Royal Museums Greenwich. https://www.rmg.co.uk/stories/topics/mary-rose#:~:text=The%20Mary%20Rose%20was%20part,%2C%20Sir%20George%20Carew%2C%20drowned.
-
-Mary Rose Trust. (2024a, May 24). Meet the crew - The Mary Rose. The Mary Rose. https://maryrose.org/meet-the-crew/</tw-passagedata><tw-passagedata pid="3" name="The cook" tags="" position="650,300" size="100,100">	A man was found in the kitchen area during the excavation of the ship. This was likely the cook. The man was found with coins, a dagger, a knife and a spoon. It is likely the cook&#39;s name was Ny Coep, as a bowl was found with the engraving, NY COEP COOK was found on the upper level. Due to his bone configuration, it is thought Ny was a member of the gun crew until his knees became damaged. 
-    
-    Click to learn something about each of the following.
-    [[Kitchen]]
-    [[Utensils]]
-    [[Food and drink]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="4" name="The master gunner" tags="" position="1150,100" size="100,100">	The master gunner was in his thirties and was five foot, four inches tall. 
-
-	Click here to find more about the guns the master gunner handled.
-	[[Master gunner&#39;s guns]]
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    [[sources]] </tw-passagedata><tw-passagedata pid="5" name="The royal archer" tags="" position="650,500" size="100,100">(set: $used to &quot;owned&quot;)
-	The royal archer was found on the main deck with one of his longbows beside him. He was in his early twenties and was around five feet, ten inches tall. It is thought he may have grown up in northern Africa due to an analysis on his teeth.
-    
-    Click here to learn about the tools that the royal archer $used.
-    [[Tools the royal archer used]]
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    [[sources]] </tw-passagedata><tw-passagedata pid="6" name="Hatch, the dog" tags="" position="1075,350" size="100,100">There was a dog on board the ship. He was named Hatch. Hatch was a young male dog and likely was on board for companionship and to catch rats.
-
-
-(after:3s)[Congratulations, you learned all about the dog on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="7" name="Life as a carpenter" tags="" position="275,175" size="100,100">The carpenter had their own private space: a cabin with a sliding door. This is likely where they slept and kept their tools. The cabin was extended and a window, which could be closed in rough weather, was cut on one side. The carpenter was likely aboard to fix any small constructional issues with the ship as it was sailing.
-
-&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:MaryRose-carpentry_tools1.jpg#/media/File:MaryRose-carpentry_tools1.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/d/db/MaryRose-carpentry_tools1.jpg&quot; alt=&quot;A set of wooden carpentry tools against a white background&quot; height=&quot;480&quot; width=&quot;584&quot;&gt;&lt;/a&gt;&lt;br&gt;By the Mary Rose Trust, &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/3.0&quot; title=&quot;Creative Commons Attribution-Share Alike 3.0&quot;&gt;CC BY-SA 3.0&lt;/a&gt;, &lt;a href=&quot;https://commons.wikimedia.org/w/index.php?curid=8883035&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-
-
-(after:10s)[Congratulations, you learned all about the carpenter and what life was like on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="8" name="Life as a surgeon" tags="" position="925,100" size="100,100">(set: $common to &quot;main&quot;)
-(set: $that to &quot;stating&quot;)
-The surgeon lived in a cabin, which was very small and dark and just housed himself and his tools. As the surgeon, he was responsible for trying to treat disease and pain. It is believed there was a lower deck where the patients were treated.
-
-	Some daily jobs of the surgeon likely included one or multiple of the following.
-- Teeth pulling. People did not look after their teeth at the time and the $common treatment to bad teeth was to pull them, without anesthetic.
-- Amputation. Splints were likely used to treat broken body parts, however if this didn&#39;t work, the limb would have been amputated by a tool similar to an ax. 
-- &quot;Treating the humors.&quot; The humors was a very old idea $that there were four liquids in the body; blood, phlegm, black bile and yellow bile. When one of these was &quot;out of balance,&quot; the surgeon bled them. A vein was opened and blood was caught in a bucket. Leeches may also have been used.
-- Medicines. Medicines, including herbs, as seen below, and ointments, were found in the ship. These were used to treat passengers.
-
-
-&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Garden_of_herbs.jpg#/media/File:Garden_of_herbs.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/2/27/Garden_of_herbs.jpg&quot; alt=&quot;Garden of herbs.jpg&quot; height=&quot;480&quot; width=&quot;360&quot;&gt;&lt;/a&gt;&lt;br&gt;By &lt;a href=&quot;//commons.wikimedia.org/w/index.php?title=User:Lauren_240&amp;amp;action=edit&amp;amp;redlink=1&quot; class=&quot;new&quot; title=&quot;User:Lauren 240 (page does not exist)&quot;&gt;Lauren 240&lt;/a&gt; - &lt;span class=&quot;int-own-work&quot; lang=&quot;en&quot;&gt;Own work&lt;/span&gt;, &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/4.0&quot; title=&quot;Creative Commons Attribution-Share Alike 4.0&quot;&gt;CC BY-SA 4.0&lt;/a&gt;, &lt;a href=&quot;https://commons.wikimedia.org/w/index.php?curid=48808760&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-
-
-(after:10s)[Congratulations, you learned all about the surgeon and what life was like on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="9" name="Master gunner&#39;s guns" tags="" position="1225,275" size="100,100">(set: $guns to &quot;weapons&quot;)
-There were two $guns that were in charge of sinking other ships: bronze and iron guns. Three handguns were also used: muskets, gunshields and hailshots. Below is a bronze gun on the Mary Rose.
-
-&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Mary_Rose_Guns_ForeBronzeCulverin_RearWroughtIronCannon.png#/media/File:Mary_Rose_Guns_ForeBronzeCulverin_RearWroughtIronCannon.png&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/f/f7/Mary_Rose_Guns_ForeBronzeCulverin_RearWroughtIronCannon.png&quot; alt=&quot;Two large metal cannons of differing designs, one in front of the other&quot; height=&quot;374&quot; width=&quot;640&quot;&gt;&lt;/a&gt;&lt;br&gt;By &lt;a href=&quot;https://en.wikipedia.org/wiki/User:The_Land&quot; class=&quot;extiw&quot; title=&quot;en:User:The Land&quot;&gt;The Land&lt;/a&gt; 
-
-(after:10s)[Congratulations, you learned all about the master gunner and the artillery on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="10" name="Kitchen" tags="" position="275,325" size="100,100">Inside the kitchen, there were two brick ovens. The ovens each had a large brass cauldron, which was lined with lead. (Yikes)
-
-&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Mary_Rose_-_Oven_%26_Cauldron.jpg#/media/File:Mary_Rose_-_Oven_&amp;amp;_Cauldron.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/31/Mary_Rose_-_Oven_%26_Cauldron.jpg&quot; alt=&quot;Mary Rose - Oven &amp;amp; Cauldron.jpg&quot; height=&quot;480&quot; width=&quot;639&quot;&gt;&lt;/a&gt;&lt;br&gt;By &lt;a href=&quot;//commons.wikimedia.org/wiki/User:Forscher_scs&quot; title=&quot;User:Forscher scs&quot;&gt;Forscher scs&lt;/a&gt; - &lt;span class=&quot;int-own-work&quot; lang=&quot;en&quot;&gt;Own work&lt;/span&gt;, &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/4.0&quot; title=&quot;Creative Commons Attribution-Share Alike 4.0&quot;&gt;CC BY-SA 4.0&lt;/a&gt;, &lt;a href=&quot;https://commons.wikimedia.org/w/index.php?curid=60374944&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-
-
-(after:6s)[Congratulations, you learned all about the cook and the kitchen on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="11" name="Utensils" tags="" position="450,575" size="100,100">The main utensils used were ladles, pots, mortars, officers plates and crew bowls.
-
-
-
-(after:4s)[Congratulations, you learned all about the cook and the utensils used on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="12" name="Food and drink" tags="" position="300,525" size="100,100">The food was served in wooden bowls and plates. The food was eaten with spoons, knives and hands. The majority of the food served was beef, pork, bread, biscuits, fish, fruits and vegetables. The only drinks on the &#39;&#39;Mary Rose&#39;&#39; were beer and wine, even the children drank them.
-
-
-(after:10s)[Congratulations, you learned all about the cook and the things served on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="13" name="Tools the royal archer used" tags="" position="775,625" size="100,100">	The royal archer used three main types of tools.
-
-
-- Archery. At the time, the English used archery a lot despite other countries switching to guns. England thought longbows were quicker to reload.
-
-- Bladed weapons. Swords and daggers, as seen below, were used for hand to hand combat.
-
- - Staff weapons. When engaging in hand to hand combat but not wanting to get within arms reach, the English used pikes and bills as methods of staff weapons.
-
-
-
-&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:MaryRose-bollock_daggers.jpg#/media/File:MaryRose-bollock_daggers.jpg&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/18/MaryRose-bollock_daggers.jpg&quot; alt=&quot;Five dagger handles with bulbous guards with the badly corroded remains of a few steel blades against a white background&quot; height=&quot;480&quot; width=&quot;353&quot;&gt;&lt;/a&gt;&lt;br&gt;By the Mary Rose Trust, &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/3.0&quot; title=&quot;Creative Commons Attribution-Share Alike 3.0&quot;&gt;CC BY-SA 3.0&lt;/a&gt;, &lt;a href=&quot;https://commons.wikimedia.org/w/index.php?curid=8883013&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-
-
-(after:10s)[Congratulations, you learned all about the archer royal and the tools used on the Mary Rose!]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="14" name=" The surgeon" tags="" position="800,400" size="100,100">	The body of a surgeon was found after the excavation of the &#39;&#39;Mary Rose&#39;&#39;. The man&#39;s name was likely William, as his initials were found and the most common W name at the time was William. He would have likely served a seven year apprenticeship under a master surgeon and had to pass exams before becoming the surgeon he was believed to be. The silver coins and other items in his purse suggest he was a wealthy man.
-
-	Click here to find more about what a day in the life as the surgeon would have looked like.
-[[Life as a surgeon]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[[sources]] </tw-passagedata><tw-passagedata pid="15" name="The carpenter" tags="" position="425,25" size="100,100">(set: $that to &quot;which&quot;)
-There were six known carpenters on the &#39;&#39;Mary Rose&#39;&#39;. One was thought to be found. Surrounded by his tools, $that including a sawhorse, stool, hammer, chisel, chopping block and a toolholder. 
-
-	Estimates theorize he was in his mid to late thirties and around five feet, seven inches tall. Isotopes of his teeth also suggest he was from a warmer climate, possibly Spain by origins of his carpentry tools. 
-    
-   	Click here to learn more about what a day in the life as a carpenter on the &#39;&#39;Mary Rose&#39;&#39; is like!
-    [[Life as a carpenter]]
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    [[sources]] </tw-passagedata></tw-storydata>
+Tacchella, C. (2023). Sailing masterpieces: Ship design and aesthetics in the naval iconography of the 17th century.
+Wikimedia Foundation. (2024, November 30). Mary Rose. Wikipedia. Retrieved from https://en.wikipedia.org/wiki/Mary_Rose
+</tw-passagedata><tw-passagedata pid="50" name="Theories behind sinking" tags="" position="875,450" size="100,100">Historians and archaeologists propose several factors contributing to the ship’s sinking. First, the ship may have been overloaded, carrying too many men, weapons, and supplies– affecting her stability. Next, the crew included many inexperienced recruits, which could have led to operational mistakes. In addition, the structural design may not have supported the addition of heavier guns over her career, which could have possibly compromised her original stability. Lastly, a sudden gust of strong winds could have exacerbated the ship’s vulnerability (British Heritage Travel, 2023).
+</tw-passagedata><tw-passagedata pid="51" name="Legacy" tags="" position="1000,775" size="100,100">The sinking of the Mary Rose became a part of English naval folklore, symbolizing both the dangers of war and the determination to defend the realm. Her loss influenced later ship designs, prompting improvements in stability, gun placement, and crew training (Mary Rose Trust, n.d.).</tw-passagedata><tw-passagedata pid="52" name="Rediscovery" tags="" position="950,675" size="100,100">In 1971, maritime archaeologist Alexander McKee located the wreck of the Mary Rose after many years of searching. Using sonar technology, McKee identified the ship’s remains buried in the silt of the Solent. This marked the beginning of a major archaeological effort to recover and study the ship (British Heritage Travel, 2023).</tw-passagedata><tw-passagedata pid="53" name="Preservation" tags="" position="1150,775" size="100,100">The Mary Rose was raised from the seabed in 1982 in one of the most ambitious maritime recovery projects ever undertaken. Over 19,000 artifacts, including weapons, tools, clothing, and personal items, were recovered alongside the ship’s hulls. These artifacts provided unprecedented insights into Tudor naval life and technology (Mary Rose Trust, n.d.).
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
